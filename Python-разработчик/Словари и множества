@@ -1,0 +1,15 @@
+print("Dictionaries")
+my_dict = {'Petr' : 1988, 'Elvira' : 1991, 'Tatyana' : 2006}
+print('Initial dict:', my_dict)
+print('Existing value:', my_dict['Petr'], '\nNot existing value:', my_dict.get('Diana'))
+my_dict.update({'Egor' : 1996, 'Dasha' : 1994}) #Add several pairs 'key-value'
+deleted_value = my_dict.pop('Egor') #Removes specified element and returns its value
+print('Current dict:', my_dict, '\nDeleted value:', deleted_value)
+
+print('\nSets')
+my_set = {1, 2, 2, True, 'qwe', 5, 5, 'qwe'}
+print('Initial set:', my_set)
+additional_set = {3, 3, 6, 7, 7, 'rty'}
+my_set = my_set.union(additional_set) #concatenate 2 sets
+removed_element = my_set.pop() #removed random element in the set
+print('Updated set:', my_set, '\nAdded elements:', additional_set, '\nRemoved element:', removed_element)
