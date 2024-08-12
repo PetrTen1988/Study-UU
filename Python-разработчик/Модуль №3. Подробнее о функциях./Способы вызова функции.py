@@ -1,13 +1,13 @@
 
 def address_validation_recipient(message, recipient, sender):    # Recipient validation as separate function
     global is_syntax_valid_recipient
-    if recipient.__contains__('@') and recipient.__contains__('.com'):
+    if recipient.__contains__('@') and recipient.endswith('.com'):
         is_syntax_valid_recipient = 'correct'
         return is_syntax_valid_recipient
-    elif recipient.__contains__('@') and recipient.__contains__('.ru'):
+    elif recipient.__contains__('@') and recipient.endswith('.ru'):
         is_syntax_valid_recipient = 'correct'
         return is_syntax_valid_recipient
-    elif recipient.__contains__('@') and recipient.__contains__('.net'):
+    elif recipient.__contains__('@') and recipient.endswith('.net'):
         is_syntax_valid_recipient = 'correct'
         return is_syntax_valid_recipient
     else:
@@ -16,13 +16,13 @@ def address_validation_recipient(message, recipient, sender):    # Recipient val
 
 def address_validation_sender(message, recipient, sender):   # Sender validation as separate function
     global is_syntax_valid_sender
-    if sender.__contains__('@') and sender.__contains__('.com'):
+    if sender.__contains__('@') and sender.endswith('.com'):
         is_syntax_valid_sender = 'correct'
         return is_syntax_valid_recipient
-    elif sender.__contains__('@') and sender.__contains__('.ru'):
+    elif sender.__contains__('@') and sender.endswith('.ru'):
         is_syntax_valid_sender = 'correct'
         return is_syntax_valid_recipient
-    elif sender.__contains__('@') and sender.__contains__('.net'):
+    elif sender.__contains__('@') and sender.endswith('.net'):
         is_syntax_valid_sender = 'correct'
         return is_syntax_valid_recipient
     else:
