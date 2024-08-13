@@ -1,44 +1,43 @@
+# Recipient validation as separate function
+def address_validation_recipient(recipient):
 
-def address_validation_recipient(message, recipient, sender):    # Recipient validation as separate function
-    global is_syntax_valid_recipient
     if recipient.__contains__('@') and recipient.endswith('.com'):
-        is_syntax_valid_recipient = 'correct'
-        return is_syntax_valid_recipient
-    elif recipient.__contains__('@') and recipient.endswith('.ru'):
-        is_syntax_valid_recipient = 'correct'
-        return is_syntax_valid_recipient
-    elif recipient.__contains__('@') and recipient.endswith('.net'):
-        is_syntax_valid_recipient = 'correct'
-        return is_syntax_valid_recipient
-    else:
-        is_syntax_valid_recipient = 'not correct'
-        return is_syntax_valid_recipient
+        is_syntax_valid_recipient = True
 
-def address_validation_sender(message, recipient, sender):   # Sender validation as separate function
-    global is_syntax_valid_sender
-    if sender.__contains__('@') and sender.endswith('.com'):
-        is_syntax_valid_sender = 'correct'
-        return is_syntax_valid_recipient
-    elif sender.__contains__('@') and sender.endswith('.ru'):
-        is_syntax_valid_sender = 'correct'
-        return is_syntax_valid_recipient
-    elif sender.__contains__('@') and sender.endswith('.net'):
-        is_syntax_valid_sender = 'correct'
-        return is_syntax_valid_recipient
+    elif recipient.__contains__('@') and recipient.endswith('.ru'):
+        is_syntax_valid_recipient = True
+
+    elif recipient.__contains__('@') and recipient.endswith('.net'):
+        is_syntax_valid_recipient = True
     else:
-        is_syntax_valid_sender = 'not correct'
-        return is_syntax_valid_recipient
+        is_syntax_valid_recipient = False
+    return is_syntax_valid_recipient
+
+# Sender validation as separate function
+def address_validation_sender(sender):
+
+    if sender.__contains__('@') and sender.endswith('.com'):
+        is_syntax_valid_sender = True
+
+    elif sender.__contains__('@') and sender.endswith('.ru'):
+        is_syntax_valid_sender = True
+
+    elif sender.__contains__('@') and sender.endswith('.net'):
+        is_syntax_valid_sender = True
+
+    else:
+        is_syntax_valid_sender = False
+    return is_syntax_valid_sender
 
 
 def send_email(message, recipient,*, sender = 'university.help@gmail.com'):
-    avs1 = message
-    avs2 = recipient
-    avs3 = sender
+    avs1 = recipient
+    avs2 = sender
 
     if sender != recipient:
-        address_validation_recipient(avs1, avs2, avs3)   # Address validation for syntax errors
-        address_validation_sender(avs1, avs2, avs3)
-        if is_syntax_valid_recipient == 'correct' and is_syntax_valid_sender == 'correct':
+        address_validation_recipient(avs1)   # Address validation for syntax errors
+        address_validation_sender(avs2)
+        if address_validation_sender(recipient) and address_validation_sender(sender):
             if sender == 'university.help@gmail.com' or sender == 'urban.teacher@mail.ru':
                 print(f'Письмо успешно отправлено с адреса {sender} на адрес {recipient}')
             else:
