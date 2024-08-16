@@ -15,9 +15,14 @@
 # print(name2 + ' ' + name1)
 
 # Практическое задание по теме "Переменные."
-num1, num2 = 5, 3
-sum = num1 + num2
-print(sum)
-result = sum + num1 * num2
-print(result)
+# num1, num2 = 5, 3
+# sum = num1 + num2
+# print(sum)
+# result = sum + num1 * num2
+# print(result)
+
+def asd(a, b, c = ''):
+    print(id(a), id(b), id(c))
+
+asd(1, 2)
 
