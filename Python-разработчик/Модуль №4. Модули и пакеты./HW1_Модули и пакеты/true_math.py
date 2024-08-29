@@ -6,3 +6,4 @@ def divide(first, second):
         return math.inf
     else:
         return first / second
+
