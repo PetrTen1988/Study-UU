@@ -5,5 +5,6 @@ def test_function():
     print(inner_function())
 
 test_function()
-#print(inner_function())
+
+print(inner_function())
 
