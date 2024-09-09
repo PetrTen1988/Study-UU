@@ -1,7 +1,17 @@
-count_digits = "This picture is an oil on canvas painting by Danish artist Anna Petersen between 1845 and 1910 year"
+class Human:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
 
-count = 0
-for elem in range(len(count_digits)):
-    if isinstance(int(elem), int):
-        count += elem
-print(count)
+    def birthday(self):
+        print(self.age)
+
+    def __del__(self):
+        return (self.name)
+
+den = Human('123', '22')
+
+print(dir(den))
+# del den
+
+# den.birthday()
