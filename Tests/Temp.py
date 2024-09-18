@@ -1,17 +1,13 @@
-class Human:
-    def __init__(self, name, age):
-        self.name = name
-        self.age = age
+class Example:
+    def __new__(cls, *args, **kwargs):
+        print(args)
+        print(kwargs)
+        return object.__new__(cls)
 
-    def birthday(self):
-        print(self.age)
+    def __init__(self, first, second, third):
+        print(first)
+        print(second)
+        print(third)
 
-    def __del__(self):
-        return (self.name)
+ex = Example('data', second=25, third=3.14)
 
-den = Human('123', '22')
-
-print(dir(den))
-# del den
-
-# den.birthday()
