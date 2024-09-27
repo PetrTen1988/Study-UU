@@ -1,51 +1,58 @@
-class Horse():
-    def __init__(self):
-        self.x_distance = 0
-        self.sound = 'Frrr'
+class Vehicle:
 
-    def run(self, dx):
-        self.dx = dx
-        self.x_distance += self.dx
+    __color_variants = ('Black', 'White', 'Green')
 
-
-class Eagle():
-    def __init__(self):
-        self.y_distance = 0
-        self.sound = 'I train, eat, sleep, and repeat'
-
-    def fly(self, dy):
-        self.dy = dy
-        self.y_distance += dy
+    def __init__(self, owner, model, color, engine_power, new_color = ''):    ## new_color as empty to avoid positional argument error
+        self.owner = owner
+        self._model = model
+        self._engine_power = engine_power
+        self._color = color
 
 
-class Pegasus(Horse, Eagle):
-    def __init__(self):
-        Horse.__init__(self)
-        Eagle.__init__(self)
+    def print_info(self):
+        print(f'Model: {self._model} \n'
+              f'Engine power: {self._engine_power}\n'
+              f'Color: {self._color}\n'
+              f'Owner: {self.owner}')
 
-    def move(self, dx, dy):
-        self.run(dx)
-        self.fly(dy)
-        return [self.x_distance, self.y_distance]
+    def get_model(self):
+        print(f'Model: {self._model}')
 
-    def get_pos(self):
-        return [self.x_distance, self.y_distance]
+    def get_horsepower(self):
+        print(f'Engine power: {self._engine_power}')
 
-    def voice(self):
-        print(self.sound)
+    def get_color(self):
+        print(f'Color: {self._color}')
+        self.color = new_color
+        return new_color
+
+    def set_color(self, new_color):
+
+        if new_color.lower() in list(map(str.lower, self.__color_variants)):
+            self._color = new_color
+        else:
+            print(f"You can't change color to {self._color}")
+
+
+class Sedan(Vehicle):
+    __PASSENGERS_LIMIT = 5
+
+vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
+
+# Изначальные свойства
+vehicle1.print_info()
+
+# Меняем свойства (в т.ч. вызывая методы)
+vehicle1.set_color('Pink')
+vehicle1.set_color('BLACK')
+vehicle1.owner = 'Vasyok'
+
+# Проверяем что поменялось
+vehicle1.print_info()
 
 
 
 
-p1 = Pegasus()
-
-print(p1.get_pos())
-p1.move(10, 15)
-print(p1.get_pos())
-p1.move(-5, 20)
-print(p1.get_pos())
-
-p1.voice()
 
 
 

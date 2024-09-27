@@ -35,8 +35,9 @@ class Vehicle:
 
 
 class Sedan(Vehicle):
-    def __init__(self, owner, model, engine_power, color, new_color = ''):     # new_color as empty to avoid positional argument error
-        super().__init__(owner, model, engine_power, color, new_color = '')    # new_color as empty to avoid positional argument error
+    def __init__(self, owner, model, color, engine_power, new_color = ''):
+        self.__PASSENGERS_LIMIT = 5
+        super().__init__(owner, model, color, engine_power, new_color = '')
 
 vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
 
