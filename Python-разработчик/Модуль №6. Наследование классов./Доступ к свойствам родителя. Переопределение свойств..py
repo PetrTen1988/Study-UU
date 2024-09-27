@@ -18,7 +18,7 @@ class Vehicle:
     def get_model(self):
         print(f'Model: {self._model}')
 
-    def get_forsepower(self):
+    def get_horsepower(self):
         print(f'Engine power: {self._engine_power}')
 
     def get_color(self):
@@ -35,9 +35,7 @@ class Vehicle:
 
 
 class Sedan(Vehicle):
-    def __init__(self, owner, model, color, engine_power, new_color = ''):
-        self.__PASSENGERS_LIMIT = 5
-        super().__init__(owner, model, color, engine_power, new_color = '')
+    __PASSENGERS_LIMIT = 5
 
 vehicle1 = Sedan('Fedos', 'Toyota Mark II', 'blue', 500)
 
