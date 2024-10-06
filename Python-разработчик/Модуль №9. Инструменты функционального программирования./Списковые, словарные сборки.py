@@ -16,8 +16,7 @@ for elem in first_strings:
 
 # third_result
 third_result = {}
-test_list = first_strings + second_strings
-for elem in test_list:
+for elem in first_strings + second_strings:
     if len(elem) % 2 == 0:
         third_result[elem] = len(elem)
 
