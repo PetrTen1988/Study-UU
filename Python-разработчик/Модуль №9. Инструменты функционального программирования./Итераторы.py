@@ -6,6 +6,10 @@ class Iterator:
         self.start, self.stop, self.step = start, stop, step
         if self.step == 0:
             raise StepValueError('Шаг не может быть равен 0')
+        if not isinstance(self.stop, int):
+            raise StepValueError('stop: некорректный тип данных')
+        if not isinstance(self.start, int):
+            raise StepValueError('start: некорректный тип данных')
 
     def __iter__(self):
         self.pointer = self.start
@@ -22,10 +26,12 @@ class Iterator:
         self.pointer += self.step
         return current
 
+
 try:
     iter1 = Iterator(100, 200, 0)
     for i in iter1:
         print(i, end=' ')
+    print()
 except StepValueError:
     print('Шаг указан неверно')
 
