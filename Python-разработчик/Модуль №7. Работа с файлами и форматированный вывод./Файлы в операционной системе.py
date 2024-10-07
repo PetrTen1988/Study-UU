@@ -14,5 +14,3 @@ for root, dirs, files in os.walk(directory):
         print('-------------------------File #', count, '----------------------------------------------')
         print(f'Обнаружен файл: {file}\nПуть: {file_path}\nРазмер: {file_size} байт\nВремя изменения: {formatted_time}\nРодительская директория: {parent_dir}\n')
 
-
-

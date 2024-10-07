@@ -1,18 +1,20 @@
-first = ['Strings', 'Student', 'Computers']
-second = ['Строка', 'Урбан', 'Компьютер']
+# first = ['Strings', 'Student', 'Computers']
+# second = ['Строка', 'Урбан', 'Компьютер']
+#
+# first_result = [len(a) - len(b) for a, b in zip(first, second) if len(a) != len(b)]
+# second_result = [len(first[i]) == len(second[i]) for i in range(len(first))]
+#
+# result = []
+# for i in range(len(first)):
+#     for j in range(len(second)):
+#         if len(first[i]) != len(second[i]):
+#             result.append(len(first[i]) - len(second[i]))
+#             break
+#
+# print(list(first_result))
+# print(list(second_result))
 
-first_result = [len(a) - len(b) for a, b in zip(first, second) if len(a) != len(b)]
-second_result = [len(first[i]) == len(second[i]) for i in range(len(first))]
 
-result = []
-for i in range(len(first)):
-    for j in range(len(second)):
-        if len(first[i]) != len(second[i]):
-            result.append(len(first[i]) - len(second[i]))
-            break
-
-print(list(first_result))
-print(list(second_result))
 # class WordsFinder:
 #     def __init__(self, *args):
 #         self.file_names = args

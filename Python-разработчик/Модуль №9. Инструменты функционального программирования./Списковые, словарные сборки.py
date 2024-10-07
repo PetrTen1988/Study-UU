@@ -2,23 +2,13 @@ first_strings = ['Elon', 'Musk', 'Programmer', 'Monitors', 'Variable']
 second_strings = ['Task', 'Git', 'Comprehension', 'Java', 'Computer', 'Assembler']
 
 # first_result
-first_result = []
-for elem in first_strings:
-    if len(elem) >= 5:
-        first_result.append(len(elem))
+first_result = [len(elem) for elem in first_strings if len(elem) > 5]
 
 # second_result
-second_result = []
-for elem in first_strings:
-    for item in second_strings:
-        if len(elem) == len(item):
-            second_result.append((elem, item))
+second_result = [(x, y) for x in first_strings for y in second_strings if len(x) == len(y)]
 
 # third_result
-third_result = {}
-for elem in first_strings + second_strings:
-    if len(elem) % 2 == 0:
-        third_result[elem] = len(elem)
+third_result = {x: len(x) for x in first_strings + second_strings if len(x) % 2 == 0}
 
 
 print(first_result)
