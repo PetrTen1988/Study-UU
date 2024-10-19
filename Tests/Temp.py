@@ -1,6 +1,18 @@
+import time
+def run(name, power):
+    enemy_power = 100
+    count = 0
+    print(f'{name}, На нас напали!')
+    while enemy_power > 0:
+        count += 1
+        enemy_power -= int(power)
+        time.sleep(1)
+        print(f'{name} сражается {count}... Осталось {enemy_power}')
+    else:
+        print(f'{name} одержал победу спустя {count} дней')
 
 
-
+first_knight = run('Sir Lancelot', 10)
 
 
 
