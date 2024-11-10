@@ -1,19 +1,49 @@
-import time
-def run(name, power):
-    enemy_power = 100
-    count = 0
-    print(f'{name}, На нас напали!')
-    while enemy_power > 0:
-        count += 1
-        enemy_power -= int(power)
-        time.sleep(1)
-        print(f'{name} сражается {count}... Осталось {enemy_power}')
-    else:
-        print(f'{name} одержал победу спустя {count} дней')
+from random import randint
+
+balance = 0
+for i in range(100):
+    balance += randint(50, 500)
+    balance -= randint(40, 390)
+
+print(balance)
 
 
-first_knight = run('Sir Lancelot', 10)
-
+# import time
+# import threading
+# from threading import Thread
+#
+#
+# def threaded(run):
+#     def wrapper(name, power):
+#         thread = threading.Thread(target=run, args=(name, power))
+#         thread.start()
+#         return thread
+#     return wrapper
+#
+#
+# class Knight(Thread):
+#     def __init__(self, name, power):
+#         super(Knight, self).__init__()
+#         self.name = name
+#         self.power = power
+#
+#     @threaded
+#     def run(self, name, power):
+#         enemy_power = 100
+#         count = 0
+#         print(f'{self.name}, На нас напали!')
+#         while enemy_power > 0:
+#             count += 1
+#             enemy_power -= int(self.power)
+#             print(f'{self.name} сражается {count}... Осталось {enemy_power}')
+#             time.sleep(1)
+#         else:
+#             print(f'{self,name} одержал победу спустя {count} дней')
+#
+#
+#
+# first_knight = Knight('Sir Lancelot', 10)
+# second_knight = Knight("Sir Galahad", 20)
 
 
 
